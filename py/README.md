@@ -108,7 +108,7 @@ import granne
 help(granne)
 ```
 
-## Building Python wheels
+## Publish
 
 ### Linux
 
@@ -122,21 +122,16 @@ In order to build `manylinux` and `aarch64` wheels `docker` is required:
 sudo ./build_multiplatform_linux_wheels.sh
 ```
 
-The wheels will be located under `dist/`
-
-after that, you need to upload wheels using `awscli`
-
-```bash
-cd dist/
-aws s3 sync . s3://constructor-packages/pypi-packages/
-```
-
 ### macOS
 
 Install deps (possibly in dedicated virtualenv)
 
 ```bash
-pip3 install -U pip wheel setuptools delocate
+pip install -U pip wheel setuptools delocate
 ```
 
 and run `build-macos-wheels.sh`. The wheel will be placed in `dist/` folder.
+
+### Upload wheels
+
+Just follow instruction from `XXX/cnstrc_image_preprocessing/README.md`
