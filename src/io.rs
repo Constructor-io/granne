@@ -14,7 +14,7 @@ pub unsafe fn load_bytes_as<T>(bytes: &[u8]) -> &[T] {
         ptr::copy_nonoverlapping(curr_ptr, new_ptr, bytes.len());
         new_ptr
     } else {
-        bytes.as_ptr()
+        curr_ptr
     };
 
     let elements: &[T] = ::std::slice::from_raw_parts(ptr as *const T, bytes.len() / ::std::mem::size_of::<T>());
