@@ -6,10 +6,11 @@ use std::ptr;
 /// Loads a slice of bytes as a slice of type T
 pub unsafe fn load_bytes_as<T>(bytes: &[u8]) -> &[T] {
     let curr_ptr = bytes.as_ptr();
-    let not_aligned = curr_ptr as usize % mem::align_of::<T>() != 0;
+    let align_of = mem::align_of::<T>();
+    let not_aligned = curr_ptr as usize % align_of != 0;
 
     let ptr = if not_aligned {
-        let layout = Layout::from_size_align(bytes.len(), mem::align_of::<T>()).unwrap();
+        let layout = Layout::from_size_align(bytes.len(), align_of).unwrap();
         let new_ptr = alloc(layout);
         ptr::copy_nonoverlapping(curr_ptr, new_ptr, bytes.len());
         new_ptr
