@@ -127,11 +127,15 @@ sudo ./build_multiplatform_linux_wheels.sh
 Install deps (possibly in dedicated virtualenv)
 
 ```bash
-pip install -U pip wheel setuptools delocate
+pip install -U pip wheel setuptools delocate twine
 ```
 
 and run `build-macos-wheels.sh`. The wheel will be placed in `dist/` folder.
 
 ### Upload wheels
 
-Just follow instruction from `XXX/cnstrc_image_preprocessing/README.md`
+```bash
+# Ensure you've logged in to AWS
+source <path to constructor_devops repo>/tools/calogin/calogin.sh
+twine upload --repository codeartifact dist/*
+```

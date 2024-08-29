@@ -21,3 +21,4 @@ dist*/
 *.egg-info
 .idea
 venv
+venv_3.*
