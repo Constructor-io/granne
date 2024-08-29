@@ -127,7 +127,7 @@ sudo ./build_multiplatform_linux_wheels.sh
 Install deps (possibly in dedicated virtualenv)
 
 ```bash
-pip install -U pip wheel setuptools delocate
+pip install -U pip wheel setuptools delocate twine
 ```
 
 and run `build-macos-wheels.sh`. The wheel will be placed in `dist/` folder.
