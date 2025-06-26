@@ -14,6 +14,16 @@ granne\*
 - Python bindings
 - Dense `float` or `int8` elements (cosine distance)
 
+## Build wheels
+
+```shell
+# All macOS wheels
+./build-macos-wheels.sh
+
+# All Linux wheels
+./build_multiplatform_linux_wheels.sh
+```
+
 ## Installation
 
 #### Requirements
