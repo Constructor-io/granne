@@ -7,7 +7,7 @@ build-backend = 'setuptools.build_meta'
 
 [project]
 name = "cnstrc-granne"
-version = "0.5.2.5.dev0"
+version = "0.5.2.5"
 
 [[tool.setuptools-rust.ext-modules]]
 target = "granne"
